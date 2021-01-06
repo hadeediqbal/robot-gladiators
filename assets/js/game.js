@@ -36,6 +36,11 @@ var fightOrSkip = function() {
   }
 
     var fight = function(enemy) {
+
+      var isPlayerTurn = true;
+      if (Math.random() > 0.5) {
+        isPlayerTurn = false;
+      } 
     
       while (playerInfo.health > 0 && enemy.health > 0) {
         // ask player if they'd like to fight or skip using fightOrSkip function
@@ -83,6 +88,7 @@ var fightOrSkip = function() {
         window.alert(playerInfo.name + ' still has ' + playerInfo.health + ' health left.');
       }
     }
+    isPlayerTurn = !isPlayerTurn;
   };
 
 
